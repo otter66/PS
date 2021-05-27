@@ -1,1 +1,2 @@
 # boj
+solved to kotlin
