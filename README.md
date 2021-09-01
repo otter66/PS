@@ -1,2 +1,2 @@
-# boj
+# PS
 solved to kotlin
