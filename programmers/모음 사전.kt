@@ -41,8 +41,3 @@ class Solution {
         return wordOfNumber
     }
 }
-
-fun main() {
-    Solution().solution("AAAAA")
-}
-
