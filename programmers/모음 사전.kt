@@ -8,7 +8,6 @@ class Solution {
         while (true) {
             if (dicNum == mutableListOf(5, 5, 5, 5, 5)) break
             else if (wordization(dicNum) == word) break
-            else if (i >= 3200) break
 
             else if (dicNum.size < 5) dicNum.add(1)
             else if (dicNum[dicNum.lastIndex] >= 5) {
