@@ -6,5 +6,5 @@ The language I usually use.
 
 <br>
 <br>
-Baekjoon Online Judge (boj): ([noj.am](noj.am))   
+Baekjoon Online Judge (boj): ([noj.am](https://www.acmicpc.net/))   
 programmers: ([programmers.co.kr](https://programmers.co.kr/))
