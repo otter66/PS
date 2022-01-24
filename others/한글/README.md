@@ -33,4 +33,5 @@ word = word -  U+AC00
 네이버 D2 : 한글 인코딩의 이해 2편 [(링크)](https://d2.naver.com/helloworld/76650)   
 앱개발자 테드박의 블로그 [(링크)](https://gun0912.tistory.com/65)   
 <br>
-tmi: 심심해서 만들어보기는 했는데 쓸 일이 있을까..? 미래의 내가 한 번쯤은 쓰겠지..?   
+~~<span style="color:#BEBEBE">tmi: 심심해서 만들어보기는 했는데 쓸 일이 있을까..? 미래의 내가 한 번쯤은 쓰겠지..?</span>~~
+
