@@ -25,7 +25,7 @@ word = word -  U+AC00
 중성: word % (21 x 28) / 28   
 종성: word % 28   
 
-
+<br><br><br>
 
 ---
 **참고**   
