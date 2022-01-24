@@ -1,0 +1,1 @@
+# About korean in unicode
