@@ -29,6 +29,6 @@ word = word -  U+AC00
 
 ---
 **참고**   
-[네이버 D2 : 한글 인코딩의 이해 1편](https://d2.naver.com/helloworld/19187)   
-[네이버 D2 : 한글 인코딩의 이해 2편](https://d2.naver.com/helloworld/76650)   
-[앱개발자 테드박의 블로그](https://gun0912.tistory.com/65)
+네이버 D2 : 한글 인코딩의 이해 1편 [(링크)](https://d2.naver.com/helloworld/19187)   
+네이버 D2 : 한글 인코딩의 이해 2편 [(링크)](https://d2.naver.com/helloworld/76650)   
+앱개발자 테드박의 블로그 [(링크)](https://gun0912.tistory.com/65)
