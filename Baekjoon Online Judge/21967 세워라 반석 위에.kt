@@ -1,44 +1,56 @@
-import java.util.LinkedList
-import java.util.Queue
-import kotlin.math.max
-
-fun dif(counts: IntArray): Int {
-    var min: Int = 0
-    for (i in counts.indices) {
-        if (0 < counts[i]) {
-            min = i
-            break
-        }
-    }
-    var max: Int = 0
-    for (i in counts.lastIndex downTo 0) {
-        if (0 < counts[i]) {
-            max = i
-            break
-        }
-    }
-
-    return max - min
-}
+import java.util.*
+import kotlin.collections.ArrayList
 
 fun main() {
-    val n = readln().toInt()
-    val arr = readln().split(" ").map { it.toInt() }
-    val counts: IntArray = List(11) { 0 }.toIntArray()
-    val subList: Queue<Int> = LinkedList<Int>()
-    var best: Int = 1
+    val (pointNumber, relationNumber, searchPoint) = readln().split(" ").map(String::toInt)
+    val relations: Array<ArrayList<Int>> = readRelations(pointNumber, relationNumber)
 
-    for (i in 0 until n) {
-        arr.min()
-        val addNum = arr[i]
-        subList.add(addNum)
-        counts[addNum]++
-        while (2 < dif(counts) && subList.isNotEmpty()) {
-            val removed = subList.remove()
-            counts[removed]--
-        }
-        best = max(subList.size, best)
+    val visited = Array(pointNumber + 1) { false }
+    searchDFS(relations = relations, visited = visited, searchPoint = searchPoint)
+    println()
+
+    visited.fill(false)
+    searchBFS(relations = relations, visited = visited, searchPoint = searchPoint)
+}
+
+fun readRelations(n: Int, relationNumber: Int): Array<ArrayList<Int>> {
+    val relations: Array<ArrayList<Int>> = Array(n + 1) { arrayListOf() }
+
+    repeat(relationNumber) {
+        val (a, b) = readln().split(" ").map(String::toInt)
+        relations[a].add(b)
+        relations[b].add(a)
     }
 
-    println(best)
+    relations.map { it.sort() }
+    return relations
+}
+
+fun searchDFS(relations: Array<ArrayList<Int>>, visited: Array<Boolean>, searchPoint: Int) {
+    visited[searchPoint] = true
+    print("$searchPoint ")
+
+    relations[searchPoint].forEach { nextSearchPoint ->
+        if (visited[nextSearchPoint]) return@forEach
+
+        searchDFS(relations, visited, nextSearchPoint)
+    }
+}
+
+fun searchBFS(relations: Array<ArrayList<Int>>, visited: Array<Boolean>, searchPoint: Int) {
+    val queue: Queue<Int> = LinkedList()
+    queue.add(searchPoint)
+    visited[searchPoint] = true
+
+    while (queue.isNotEmpty()) {
+        val currentSearchPoint: Int = queue.remove()
+        print("$currentSearchPoint ")
+
+        relations[currentSearchPoint].forEach { nextSearchPoint ->
+            if (visited[nextSearchPoint]) return@forEach
+
+            queue.add(nextSearchPoint)
+            visited[nextSearchPoint] = true
+        }
+    }
 }
